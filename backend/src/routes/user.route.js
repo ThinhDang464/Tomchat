@@ -20,7 +20,7 @@ router.get("/friends", getMyFriends);
 router.post("/friend-request/:id", sendFriendRequest);
 
 //accept friend request
-router.post("/friend-request/:id/accept", acceptFriendRequest);
+router.put("/friend-request/:id/accept", acceptFriendRequest);
 
 //get friend request to display pending and accepted friend request
 router.get("/friend-requests", getFriendRequests);
