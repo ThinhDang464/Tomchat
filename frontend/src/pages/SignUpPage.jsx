@@ -21,7 +21,7 @@ const SignUpPage = () => {
     mutationFn: signup,
     //if success(mutationFn returns a resolved promise) fetch auth/me again for correct navigation
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["authUser"] }); //use querry key to refer to correct useQuerry, use this when dont need data from response
+      queryClient.invalidateQueries({ queryKey: ["authUser"] }); //use querry key to refer to correct useQuerry, trigger global update -> app.jsx call useAuthuser again for new values
     },
   });
 
