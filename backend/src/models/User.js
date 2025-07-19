@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema(
     profilePic: { type: String, default: "" },
     nativeLanguage: { type: String, default: "" },
     learningLanguage: { type: String, default: "" },
+    location: {
+      type: String,
+      default: "",
+    },
     isOnboarded: { type: Boolean, default: false }, //need onboard = true to access services
     friends: [
       {

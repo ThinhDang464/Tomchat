@@ -179,7 +179,7 @@ export const getOutgoingFriendReqs = async (req, res) => {
       "recipient",
       "fullName profilePic nativeLanguage learningLanguage"
     );
-    res.status(200).json({ outGoingReqs });
+    res.status(200).json(outGoingReqs); //get direct array sent over network not object with same name
   } catch (error) {
     console.log("Error in getOutgoing req controller", error.message);
     res.status(500).json({ message: "Internal Server Error" });
