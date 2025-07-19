@@ -3,8 +3,10 @@ import { useState } from "react";
 import { login } from "../lib/api";
 import { WebcamIcon } from "lucide-react";
 import { Link } from "react-router";
+import { useThemeStore } from "../store/useThemeStore";
 
 const LoginPage = () => {
+  const { theme, setTheme } = useThemeStore();
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -29,7 +31,7 @@ const LoginPage = () => {
   return (
     <div
       className="h-screen flex items-center justify-center p-4 sm:p-6 md:p-8"
-      data-theme="forest"
+      data-theme={theme}
     >
       <div className="border border-primary/25 flex flex-col lg:flex-row w-full max-w-5xl mx-auto bg-base-100 rounded-xl shadow-lg overflow-hidden">
         {/*LOGIN FORM _ LEFT PANEL */}

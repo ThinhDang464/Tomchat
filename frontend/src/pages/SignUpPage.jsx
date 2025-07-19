@@ -11,6 +11,11 @@ const SignUpPage = () => {
     password: "",
   });
 
+  /*
+  same method like below but with custom hook
+  const {isPending, error, signupMutation} = useSignUp();
+  */
+
   const queryClient = useQueryClient();
 
   const {
