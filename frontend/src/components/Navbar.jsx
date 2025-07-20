@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router";
+import { Link, Navigate, useLocation, useNavigate } from "react-router";
 import useAuthUser from "../hooks/useAuthUser";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { logout } from "../lib/api";
@@ -7,6 +7,7 @@ import ThemeSelector from "./ThemeSelector";
 import useLogout from "../hooks/useLogout";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const { authUser } = useAuthUser();
   const location = useLocation();
   const isChatPage = location.pathname?.startsWith("/chat"); //check if in caht page -> show logo
@@ -50,8 +51,9 @@ const Navbar = () => {
 
           {/*User avatar */}
           <div className="avatar">
-            <div className="w-9 rounded-full">
+            <div className="w-9 rounded-full cursor-pointer">
               <img
+                onClick={() => navigate("/")}
                 src={authUser?.profilePic}
                 alt="User Avatar"
                 rel="noreferrer"
