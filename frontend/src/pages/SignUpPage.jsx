@@ -3,7 +3,9 @@ import { Webcam } from "lucide-react";
 import { Link } from "react-router";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { signup } from "../lib/api";
+import { useThemeStore } from "../store/useThemeStore";
 const SignUpPage = () => {
+  const { theme, setTheme } = useThemeStore();
   //controlled state
   const [signupData, setSignupData] = useState({
     fullName: "",
@@ -38,7 +40,7 @@ const SignUpPage = () => {
   return (
     <div
       className="h-screen flex items-center justif-center p-4 sm:p-6 md:p-8"
-      data-theme="forest"
+      data-theme={theme}
     >
       <div className="border border-primary/25 flex flex-col lg:flex-row w-full max-w-5xl mx-auto bg-base-100 rounded-xl shadow-lg overflow-hidden">
         {/*SIGNUP FORM _ LEFT PANEL */}
