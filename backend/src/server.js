@@ -7,7 +7,7 @@ import cookieParser from "cookie-parser";
 import { connectDB } from "./lib/db.js";
 import cors from "cors";
 import path from "path";
-//----------------------------------EXPRESS + ENV-----------------
+//----------------------------------EXPRESS + ENV------------------------
 const app = express();
 dotenv.config();
 const PORT = process.env.PORT;
